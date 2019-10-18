@@ -87,8 +87,8 @@ export class TodoListComponent implements OnInit, OnDestroy {
     todo.title = editInput.value;
     todo.editMode = false;
     this.subscriptions.add(
-      this.todoDataService.updateTodoById(todo.todoid, todo).subscribe(val => {
-        const index = this.incompletetodos.findIndex(thetodo => thetodo.todoid === val.todoid);
+      this.todoDataService.updateTodoById(todo.id, todo).subscribe(val => {
+        const index = this.incompletetodos.findIndex(thetodo => thetodo.id === val.id);
         this.incompletetodos[index] = todo;
       })
     );
