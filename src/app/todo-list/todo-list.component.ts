@@ -80,6 +80,12 @@ export class TodoListComponent implements OnInit, OnDestroy {
   // Added for Step 12
   editTodo(todo: Todo) {
     todo.editMode = true;
+
+    this.incompletetodos.forEach(todoFromList => {
+      if (todoFromList != todo) {
+        todoFromList.editMode = false;
+      }
+    })
   }
 
   // Added for Step 12
